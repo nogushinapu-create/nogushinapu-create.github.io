@@ -112,7 +112,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 22px;
+  gap: 18px;
   list-style: none;
 }
 
@@ -133,7 +133,7 @@ img {
   background: var(--accent);
   content: "";
   transform: scaleX(0);
-  transform-origin: centre;
+  transform-origin: center;
   transition: transform 180ms ease;
 }
 
@@ -306,6 +306,28 @@ h2 {
   font-style: italic;
 }
 
+.subsection-title {
+  margin: 52px 0 18px;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.section-content a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.section-content a:hover {
+  color: var(--accent-dark);
+}
 
 /* ==================================================
    Research interests
@@ -398,6 +420,39 @@ h2 {
   font-size: 0.94rem;
 }
 
+/* ==================================================
+   Outside research
+================================================== */
+
+.personal-interest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.personal-interest-item {
+  padding: 30px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.personal-interest-item h3 {
+  margin: 0 0 16px;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.personal-interest-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 
 /* ==================================================
    Qualifications and publications
@@ -410,7 +465,15 @@ h2 {
   list-style: none;
 }
 
-.qualification-list li,
+.qualification-list li {
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+
+.qualification-list li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
 .publication-item {
   padding: 24px 0;
   display: grid;
@@ -419,9 +482,14 @@ h2 {
   border-top: 1px solid var(--line);
 }
 
-.qualification-list li:last-child,
 .publication-item:last-child {
   border-bottom: 1px solid var(--line);
+}
+
+.qualification-name {
+  display: block;
+  width: 100%;
+  line-height: 1.8;
 }
 
 .qualification-year {
@@ -514,7 +582,7 @@ h2 {
    Tablet
 ================================================== */
 
-@media (max-width: 960px) {
+@media (max-width: 1080px){
   .nav-container {
     min-height: auto;
     padding: 18px 0;
@@ -541,9 +609,10 @@ h2 {
   }
 
   .research-interests,
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
+.project-grid,
+.personal-interest-grid {
+  grid-template-columns: 1fr;
+}
 
   .interest-item + .interest-item {
     border-top: 1px solid var(--line);
@@ -618,11 +687,10 @@ h2 {
     padding: 26px 22px;
   }
 
-  .qualification-list li,
   .publication-item {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
 
   .contact-links {
     align-items: stretch;
